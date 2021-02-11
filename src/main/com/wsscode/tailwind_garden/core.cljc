@@ -14,28 +14,56 @@
     [garden.stylesheet]))
 
 (def bases
-  (reduce
-    into
-    [backgrounds/background-colors
-
-     borders/border-colors
-     borders/borders
-
-     box-alignment/align-items
-
-     flexbox/flex
-
+  (reduce into
+    [layout/box-sizing
+     layout/display
+     layout/floats
+     layout/clear
+     layout/object-fit
+     layout/object-position
      layout/overflow
+     layout/overscroll-behavior
+     layout/position
+     layout/top-right-left-bottom
+     layout/visibility
+     layout/z-index
 
-     sizing/max-width
-     sizing/width
+     flexbox/flex-direction
+     flexbox/flex-wrap
+     flexbox/flex
+     flexbox/flex-grow
+     flexbox/flex-shrink
+     flexbox/order
+
+     box-alignment/justify-content
+     box-alignment/justify-items
+     box-alignment/justify-self
+     box-alignment/align-content
+     box-alignment/align-items
+     box-alignment/align-self
+     box-alignment/place-content
+     box-alignment/place-items
+     box-alignment/place-self
 
      spacing/margin
      spacing/padding
+     spacing/space-between
+
+     sizing/width
+     sizing/min-width
+     sizing/max-width
+     sizing/height
+     sizing/min-height
+     sizing/max-height
 
      typography/font-family
      typography/font-size
-     typography/text-colors]))
+     typography/text-colors
+
+     backgrounds/background-colors
+
+     borders/border-colors
+     borders/borders]))
 
 (defn prefix-classname [x prefix]
   (str "." prefix (subs (name x) 1)))
@@ -45,13 +73,13 @@
                               (into [] (map #(update % 0 prefix-classname (str prefix ":"))) rules)))
 
 (def everything
-  (conj
-    (into [base/preflight] bases)
-    (responsive-selectors "640px" "sm" bases)
-    (responsive-selectors "768px" "md" bases)
-    (responsive-selectors "1024px" "lg" bases)
-    (responsive-selectors "1280px" "xl" bases)
-    (responsive-selectors "1536px" "2xl" bases)))
+  (-> (reduce into [base/preflight layout/container bases])
+      (conj
+        (responsive-selectors "640px" "sm" bases)
+        (responsive-selectors "768px" "md" bases)
+        (responsive-selectors "1024px" "lg" bases)
+        (responsive-selectors "1280px" "xl" bases)
+        (responsive-selectors "1536px" "2xl" bases))))
 
 (defn compute-css []
   (garden/css everything))
