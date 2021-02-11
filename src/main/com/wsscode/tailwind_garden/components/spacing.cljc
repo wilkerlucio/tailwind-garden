@@ -1,4 +1,6 @@
-(ns com.wsscode.tailwind-garden.components.spacing)
+(ns com.wsscode.tailwind-garden.components.spacing
+  (:require
+    [com.wsscode.tailwind-garden.expanders :as exp]))
 
 (def space-steps
   [["0" "0px"]
@@ -38,24 +40,10 @@
    ["px" "1px"]])
 
 (defn gen-spaces [properties prefix]
-  (mapv
-    (fn [[k v]]
-      [(keyword (str "." prefix "-" k))
-       (into {}
-             (map (fn [p] [p v]))
-             properties)])
-    space-steps))
+  (exp/expand-values properties prefix space-steps))
 
 (defn gen-spaces+negatives [properties prefix]
-  (into
-    (gen-spaces properties prefix)
-    (mapv
-      (fn [[k v]]
-        [(keyword (str ".-" prefix "-" k))
-         (into {}
-               (map (fn [p] [p (str "-" v)]))
-               properties)])
-      space-steps)))
+  (exp/expand-values+negatives properties prefix space-steps))
 
 (def padding (gen-spaces [:padding] "p"))
 (def padding-y (gen-spaces [:padding-top :padding-bottom] "py"))
