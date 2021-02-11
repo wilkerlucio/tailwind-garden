@@ -102,9 +102,9 @@
     - [X] Ring Opacity
     - [X] Ring Offset Width
     - [X] Ring Offset Color
-- [ ] EFFECTS
-    - [ ] Box Shadow
-    - [ ] Opacity
+- [X] EFFECTS
+    - [X] Box Shadow
+    - [X] Opacity
 - [ ] TABLES
     - [ ] Border Collapse
     - [ ] Table Layout

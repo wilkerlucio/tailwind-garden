@@ -5,6 +5,7 @@
     [com.wsscode.tailwind-garden.components.base :as base]
     [com.wsscode.tailwind-garden.components.borders :as borders]
     [com.wsscode.tailwind-garden.components.box-alignment :as box-alignment]
+    [com.wsscode.tailwind-garden.components.effects :as effects]
     [com.wsscode.tailwind-garden.components.flexbox :as flexbox]
     [com.wsscode.tailwind-garden.components.grid :as grid]
     [com.wsscode.tailwind-garden.components.layout :as layout]
@@ -110,7 +111,10 @@
      (borders/ring-width)
      (borders/ring-color)
      (borders/ring-offset-width)
-     (borders/ring-offset-color)]))
+     (borders/ring-offset-color)
+
+     (effects/box-shadow)
+     (effects/opacity)]))
 
 (defn prefix-classname [x prefix]
   (str "." prefix (subs (name x) 1)))
