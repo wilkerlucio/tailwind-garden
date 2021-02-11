@@ -98,3 +98,11 @@
    [:.overscroll-x-auto {:overscroll-behavior-x "auto"}]
    [:.overscroll-x-contain {:overscroll-behavior-x "contain"}]
    [:.overscroll-x-none {:overscroll-behavior-x "none"}]])
+
+(def position
+  "https://tailwindcss.com/docs/position"
+  [[:.static {:position "static"}]
+   [:.fixed {:position "fixed"}]
+   [:.absolute {:position "absolute"}]
+   [:.relative {:position "relative"}]
+   [:.sticky {:position "sticky"}]])
