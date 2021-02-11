@@ -134,3 +134,5 @@
   - [X] Stroke Width
 - [X] ACCESSIBILITY
     - [X] Screen Readers
+
+All the things ported! Or almost, still missing the variants for hover, active, etc...
