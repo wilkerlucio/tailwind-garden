@@ -6,6 +6,7 @@
     [com.wsscode.tailwind-garden.components.borders :as borders]
     [com.wsscode.tailwind-garden.components.box-alignment :as box-alignment]
     [com.wsscode.tailwind-garden.components.flexbox :as flexbox]
+    [com.wsscode.tailwind-garden.components.grid :as grid]
     [com.wsscode.tailwind-garden.components.layout :as layout]
     [com.wsscode.tailwind-garden.components.sizing :as sizing]
     [com.wsscode.tailwind-garden.components.spacing :as spacing]
@@ -13,7 +14,7 @@
     [garden.core :as garden]
     [garden.stylesheet]))
 
-(def bases
+(defn bases []
   (reduce into
     [layout/box-sizing
      layout/display
@@ -34,6 +35,15 @@
      flexbox/flex-grow
      flexbox/flex-shrink
      flexbox/order
+
+     (grid/grid-template-columns)
+     (grid/grid-column-start-end)
+     (grid/grid-template-rows)
+     (grid/grid-row-start-end)
+     (grid/grid-auto-flow)
+     (grid/grid-auto-columns)
+     (grid/grid-auto-rows)
+     (grid/gap)
 
      box-alignment/justify-content
      box-alignment/justify-items
@@ -72,14 +82,18 @@
   (garden.stylesheet/at-media {:min-width min-width}
                               (into [] (map #(update % 0 prefix-classname (str prefix ":"))) rules)))
 
-(def everything
-  (-> (reduce into [base/preflight layout/container bases])
-      (conj
-        (responsive-selectors "640px" "sm" bases)
-        (responsive-selectors "768px" "md" bases)
-        (responsive-selectors "1024px" "lg" bases)
-        (responsive-selectors "1280px" "xl" bases)
-        (responsive-selectors "1536px" "2xl" bases))))
+(defn everything []
+  (let [bases (bases)]
+    (-> (reduce into [base/preflight layout/container bases])
+        (conj
+          (responsive-selectors "640px" "sm" bases)
+          (responsive-selectors "768px" "md" bases)
+          (responsive-selectors "1024px" "lg" bases)
+          (responsive-selectors "1280px" "xl" bases)
+          (responsive-selectors "1536px" "2xl" bases)))))
 
 (defn compute-css []
-  (garden/css everything))
+  (garden/css (everything)))
+
+(comment
+  (count (compute-css)))

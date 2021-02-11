@@ -25,15 +25,15 @@
     - [X] Flex Grow
     - [X] Flex Shrink
     - [X] Order 
-- [ ] GRID
-    - [ ] Grid Template Columns
-    - [ ] Grid Column Start / End
-    - [ ] Grid Template Rows
-    - [ ] Grid Row Start / End
-    - [ ] Grid Auto Flow
-    - [ ] Grid Auto Columns
-    - [ ] Grid Auto Rows
-    - [ ] Gap
+- [X] GRID
+    - [X] Grid Template Columns
+    - [X] Grid Column Start / End
+    - [X] Grid Template Rows
+    - [X] Grid Row Start / End
+    - [X] Grid Auto Flow
+    - [X] Grid Auto Columns
+    - [X] Grid Auto Rows
+    - [X] Gap
 - [X] BOX ALIGNMENT
     - [X] Justify Content
     - [X] Justify Items
