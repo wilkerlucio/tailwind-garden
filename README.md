@@ -121,17 +121,13 @@
     - [ ] Rotate
     - [ ] Translate
     - [ ] Skew
-- [ ] INTERACTIVITY
-    - [ ] Appearance
-    - [ ] Cursor
-    - [ ] Outline
-    - [ ] Pointer Events
-    - [ ] Resize
-    - [ ] User Select
-    - [ ] SVG
-    - [ ] Fill
-    - [ ] Stroke
-    - [ ] Stroke Width
+- [X] INTERACTIVITY
+    - [X] Appearance
+    - [X] Cursor
+    - [X] Outline
+    - [X] Pointer Events
+    - [X] Resize
+    - [X] User Select
 - [X] SVG
   - [X] Fill
   - [X] Stroke

@@ -9,6 +9,7 @@
     [com.wsscode.tailwind-garden.components.effects :as effects]
     [com.wsscode.tailwind-garden.components.flexbox :as flexbox]
     [com.wsscode.tailwind-garden.components.grid :as grid]
+    [com.wsscode.tailwind-garden.components.interactivity :as interactivity]
     [com.wsscode.tailwind-garden.components.layout :as layout]
     [com.wsscode.tailwind-garden.components.sizing :as sizing]
     [com.wsscode.tailwind-garden.components.spacing :as spacing]
@@ -121,6 +122,13 @@
 
      (tables/border-collapse)
      (tables/table-layout)
+
+     (interactivity/appearance)
+     (interactivity/cursor)
+     (interactivity/outline)
+     (interactivity/pointer-events)
+     (interactivity/resize)
+     (interactivity/user-select)
 
      (svg/fill)
      (svg/stroke)
