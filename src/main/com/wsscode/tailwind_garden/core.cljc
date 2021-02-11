@@ -66,14 +66,14 @@
      (sizing/min-height)
      (sizing/max-height)
 
-     typography/font-family
-     typography/font-size
-     typography/text-colors
+     (typography/font-family)
+     (typography/font-size)
+     (typography/text-colors)
 
-     backgrounds/background-colors
+     (backgrounds/background-colors)
 
-     borders/border-colors
-     borders/borders]))
+     (borders/border-color)
+     (borders/border-width)]))
 
 (defn prefix-classname [x prefix]
   (str "." prefix (subs (name x) 1)))

@@ -1,7 +1,10 @@
 (ns com.wsscode.tailwind-garden.components.borders
-  (:require [com.wsscode.tailwind-garden.defaults.colors :as colors]))
+  (:require
+    [com.wsscode.tailwind-garden.defaults.colors :as colors]))
 
-(def borders
+(defn border-width
+  "https://tailwindcss.com/docs/border-width"
+  []
   [[:.border-0 {:border-width "0px"}]
    [:.border-2 {:border-width "2px"}]
    [:.border-4 {:border-width "4px"}]
@@ -28,4 +31,7 @@
    [:.border-b {:border-bottom-width "1px"}]
    [:.border-l {:border-left-width "1px"}]])
 
-(def border-colors (colors/gen-colors [:border-color] "border"))
+(defn border-color
+  "https://tailwindcss.com/docs/border-color"
+  []
+  (colors/gen-colors [:border-color] "border"))
