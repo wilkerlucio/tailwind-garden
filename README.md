@@ -114,13 +114,13 @@
     - [ ] Transition Timing Function
     - [ ] Transition Delay
     - [ ] Animation
-- [ ] TRANSFORMS
-    - [ ] Transform
-    - [ ] Transform Origin
-    - [ ] Scale
-    - [ ] Rotate
-    - [ ] Translate
-    - [ ] Skew
+- [X] TRANSFORMS
+    - [X] Transform
+    - [X] Transform Origin
+    - [X] Scale
+    - [X] Rotate
+    - [X] Translate
+    - [X] Skew
 - [X] INTERACTIVITY
     - [X] Appearance
     - [X] Cursor

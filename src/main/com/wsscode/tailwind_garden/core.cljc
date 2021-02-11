@@ -15,6 +15,7 @@
     [com.wsscode.tailwind-garden.components.spacing :as spacing]
     [com.wsscode.tailwind-garden.components.svg :as svg]
     [com.wsscode.tailwind-garden.components.tables :as tables]
+    [com.wsscode.tailwind-garden.components.transforms :as transforms]
     [com.wsscode.tailwind-garden.components.typography :as typography]
     [garden.core :as garden]
     [garden.stylesheet]))
@@ -122,6 +123,13 @@
 
      (tables/border-collapse)
      (tables/table-layout)
+
+     (transforms/transform)
+     (transforms/transform-origin)
+     (transforms/scale)
+     (transforms/rotate)
+     (transforms/translate)
+     (transforms/skew)
 
      (interactivity/appearance)
      (interactivity/cursor)

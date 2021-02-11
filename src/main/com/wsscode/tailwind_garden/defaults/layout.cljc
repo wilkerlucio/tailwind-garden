@@ -1,4 +1,6 @@
-(ns com.wsscode.tailwind-garden.defaults.layout)
+(ns com.wsscode.tailwind-garden.defaults.layout
+  (:require
+    [com.wsscode.tailwind-garden.expanders :as exp]))
 
 (def positions
   [["0" "0px"]
@@ -44,3 +46,15 @@
    ["2/4" "50%"]
    ["3/4" "75%"]
    ["full" "100%"]])
+
+(defn gen-positions [properties prefix]
+  (exp/expand-values
+    {::exp/properties properties
+     ::exp/prefix     prefix
+     ::exp/values     positions}))
+
+(defn gen-positions+negatives [properties prefix]
+  (exp/expand-values+negatives
+    {::exp/properties properties
+     ::exp/prefix     prefix
+     ::exp/values     positions}))

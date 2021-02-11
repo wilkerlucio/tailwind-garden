@@ -3,7 +3,6 @@
   (:require
     [com.wsscode.tailwind-garden.defaults.layout :as data.layout]
     [com.wsscode.tailwind-garden.defaults.responsive :as responsive]
-    [com.wsscode.tailwind-garden.expanders :as exp]
     [garden.stylesheet]))
 
 (defn container
@@ -119,23 +118,17 @@
    [:.relative {:position "relative"}]
    [:.sticky {:position "sticky"}]])
 
-(defn gen-positions+negatives [properties prefix]
-  (exp/expand-values+negatives
-    {::exp/properties properties
-     ::exp/prefix     prefix
-     ::exp/values     data.layout/positions}))
-
 (defn top-right-left-bottom
   "https://tailwindcss.com/docs/top-right-bottom-left"
   []
   (reduce into
-    [(gen-positions+negatives [:top :right :bottom :left] "inset")
-     (gen-positions+negatives [:top :bottom] "inset-y")
-     (gen-positions+negatives [:right :left] "inset-x")
-     (gen-positions+negatives [:top] "top")
-     (gen-positions+negatives [:right] "right")
-     (gen-positions+negatives [:bottom] "bottom")
-     (gen-positions+negatives [:left] "left")]))
+    [(data.layout/gen-positions+negatives [:top :right :bottom :left] "inset")
+     (data.layout/gen-positions+negatives [:top :bottom] "inset-y")
+     (data.layout/gen-positions+negatives [:right :left] "inset-x")
+     (data.layout/gen-positions+negatives [:top] "top")
+     (data.layout/gen-positions+negatives [:right] "right")
+     (data.layout/gen-positions+negatives [:bottom] "bottom")
+     (data.layout/gen-positions+negatives [:left] "left")]))
 
 (defn visibility
   "https://tailwindcss.com/docs/visibility"
