@@ -34,16 +34,16 @@
     - [ ] Grid Auto Columns
     - [ ] Grid Auto Rows
     - [ ] Gap
-- [ ] BOX ALIGNMENT
+- [X] BOX ALIGNMENT
     - [X] Justify Content
     - [X] Justify Items
-    - [ ] Justify Self
-    - [ ] Align Content
+    - [X] Justify Self
+    - [X] Align Content
     - [X] Align Items
-    - [ ] Align Self
-    - [ ] Place Content
-    - [ ] Place Items
-    - [ ] Place Self
+    - [X] Align Self
+    - [X] Place Content
+    - [X] Place Items
+    - [X] Place Self
 - [ ] SPACING
     - [X] Padding
     - [X] Margin
