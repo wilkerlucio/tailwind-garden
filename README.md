@@ -15,7 +15,7 @@
     - [X] Overflow
     - [X] Overscroll Behavior
     - [X] Position
-    - [ ] Top / Right / Bottom / Left
+    - [X] Top / Right / Bottom / Left
     - [ ] Visibility
     - [ ] Z-Index
 - [X] FLEXBOX

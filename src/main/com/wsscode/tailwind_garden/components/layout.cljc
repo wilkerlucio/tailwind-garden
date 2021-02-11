@@ -1,7 +1,9 @@
 (ns com.wsscode.tailwind-garden.components.layout
   (:refer-clojure :exclude [floats])
   (:require
+    [com.wsscode.tailwind-garden.defaults.layout :as data.layout]
     [com.wsscode.tailwind-garden.defaults.responsive :as responsive]
+    [com.wsscode.tailwind-garden.expanders :as exp]
     [garden.stylesheet]))
 
 (def container
@@ -106,3 +108,19 @@
    [:.absolute {:position "absolute"}]
    [:.relative {:position "relative"}]
    [:.sticky {:position "sticky"}]])
+
+(defn gen-positions [properties prefix]
+  (exp/expand-values properties prefix data.layout/positions))
+
+(defn gen-positions+negatives [properties prefix]
+  (exp/expand-values+negatives properties prefix data.layout/positions))
+
+(def top-right-left-bottom
+  "https://tailwindcss.com/docs/top-right-bottom-left"
+  [(gen-positions+negatives [:top :right :bottom :left] "inset")
+   (gen-positions+negatives [:top :bottom] "inset-y")
+   (gen-positions+negatives [:right :left] "inset-x")
+   (gen-positions+negatives [:top] "top")
+   (gen-positions+negatives [:right] "right")
+   (gen-positions+negatives [:bottom] "bottom")
+   (gen-positions+negatives [:left] "left")])
