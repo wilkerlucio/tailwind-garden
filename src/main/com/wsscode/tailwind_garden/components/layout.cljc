@@ -16,6 +16,7 @@
    [:.box-content {:box-sizing "content-box"}]])
 
 (def display
+  "https://tailwindcss.com/docs/display"
   [[:.block {:display "block"}]
    [:.inline-block {:display "inline-block"}]
    [:.inline {:display "inline"}]
