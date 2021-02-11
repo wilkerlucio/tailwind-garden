@@ -36,7 +36,7 @@
     - [ ] Gap
 - [ ] BOX ALIGNMENT
     - [X] Justify Content
-    - [ ] Justify Items
+    - [X] Justify Items
     - [ ] Justify Self
     - [ ] Align Content
     - [X] Align Items
