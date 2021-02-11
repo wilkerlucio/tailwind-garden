@@ -1,13 +1,15 @@
 (ns com.wsscode.tailwind-garden.components.layout
-  (:require [com.wsscode.tailwind-garden.defaults.responsive :as responsive]
-            [garden.stylesheet]))
+  (:refer-clojure :exclude [floats])
+  (:require
+    [com.wsscode.tailwind-garden.defaults.responsive :as responsive]
+    [garden.stylesheet]))
 
 (def container
   "https://tailwindcss.com/docs/container"
   (into [[:.container {:width "100%"}]]
         (map (fn [[_name size]]
                (garden.stylesheet/at-media {:min-width size}
-                 [:.container {:max-width size}])))
+                                           [:.container {:max-width size}])))
         responsive/breakpoints))
 
 (def box-sizing
@@ -42,6 +44,13 @@
   [[:.float-right {:float "right"}]
    [:.float-left {:float "left"}]
    [:.float-none {:float "none"}]])
+
+(def clear
+  "https://tailwindcss.com/docs/clear"
+  [[:.clear-left {:clear "left"}]
+   [:.clear-right {:clear "right"}]
+   [:.clear-both {:clear "both"}]
+   [:.clear-none {:clear "none"}]])
 
 (def overflow
   "https://tailwindcss.com/docs/overflow"

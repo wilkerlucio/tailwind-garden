@@ -9,7 +9,7 @@
     - [X] Box Sizing
     - [X] Display
     - [X] Floats
-    - [ ] Clear
+    - [X] Clear
     - [ ] Object Fit
     - [ ] Object Position
     - [X] Overflow
