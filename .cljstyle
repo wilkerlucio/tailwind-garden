@@ -1,0 +1,36 @@
+{:indents               {.then                              [[:inner 0]]
+                         >def                               [[:inner 0]]
+                         >defn                              [[:inner 0]]
+                         >defn-                             [[:inner 0]]
+                         as->                               [[:inner 0]]
+                         assert                             [[:inner 0]]
+                         assoc                              [[:inner 0]]
+                         assoc-in                           [[:inner 0]]
+                         async/pipeline-async               [[:inner 0]]
+                         async/put!                         [[:inner 0]]
+                         compute-attribute-graph            [[:inner 0]]
+                         compute-root-branch                [[:inner 0]]
+                         compute-run-graph*                 [[:inner 0]]
+                         cond->                             [[:inner 0]]
+                         conj                               [[:inner 0]]
+                         defrecord                          [[:inner 0]]
+                         deftype                            [[:inner 0]]
+                         every?                             [[:inner 0]]
+                         mapv                               [[:inner 0]]
+                         recur                              [[:inner 0]]
+                         reduce                             [[:inner 0]]
+                         s/and                              [[:inner 0]]
+                         s/conform                          [[:inner 0]]
+                         s/fdef                             [[:inner 0]]
+                         s/fspec                            [[:inner 0]]
+                         s/spec                             [[:inner 0]]
+                         some                               [[:inner 0]]
+                         swap!                              [[:inner 0]]
+                         update                             [[:inner 0]]
+                         update-in                          [[:inner 0]]}
+ :line-break-functions? false
+ :max-blank-lines       1
+ :insert-padding-lines? true
+ :padding-lines         1
+ :reformat-types?       false
+ :file-ignore           #{}}
