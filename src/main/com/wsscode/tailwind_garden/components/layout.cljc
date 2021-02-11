@@ -124,3 +124,8 @@
    (gen-positions+negatives [:right] "right")
    (gen-positions+negatives [:bottom] "bottom")
    (gen-positions+negatives [:left] "left")])
+
+(def visibility
+  "https://tailwindcss.com/docs/visibility"
+  [[:.visible {:visibility "visible"}]
+   [:.invisible {:visibility "hidden"}]])
