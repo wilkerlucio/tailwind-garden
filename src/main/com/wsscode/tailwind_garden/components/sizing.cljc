@@ -1,6 +1,8 @@
 (ns com.wsscode.tailwind-garden.components.sizing)
 
-(def width
+(defn width
+  "https://tailwindcss.com/docs/width"
+  []
   [[".w-0" {:width "0px"}]
    [".w-0.5" {:width "0.125rem"}]
    [".w-1" {:width "0.25rem"}]
@@ -68,13 +70,17 @@
    [".w-min" {:width "min-content"}]
    [".w-max" {:width "max-content"}]])
 
-(def min-width
+(defn min-width
+  "https://tailwindcss.com/docs/min-width"
+  []
   [[:min-w-0 {:min-width "0px"}]
    [:min-w-full {:min-width "100%"}]
    [:min-w-min {:min-width "min-content"}]
    [:min-w-max {:min-width "max-content"}]])
 
-(def max-width
+(defn max-width
+  "https://tailwindcss.com/docs/max-width"
+  []
   [[:.max-w-0 {:max-width "0rem"}]
    [:.max-w-none {:max-width "none"}]
    [:.max-w-xs {:max-width "20rem"}]
@@ -98,7 +104,9 @@
    [:.max-w-screen-xl {:max-width "1280px"}]
    [:.max-w-screen-2xl {:max-width "1536px"}]])
 
-(def height
+(defn height
+  "https://tailwindcss.com/docs/height"
+  []
   [["h-0" {:height "0px"}]
    ["h-0.5" {:height "0.125rem"}]
    ["h-1" {:height "0.25rem"}]
@@ -153,12 +161,16 @@
    ["h-full" {:height "100%"}]
    ["h-screen" {:height "100vh"}]])
 
-(def min-height
+(defn min-height
+  "https://tailwindcss.com/docs/min-height"
+  []
   [[:.min-h-0 {:min-height "0px"}]
    [:.min-h-full {:min-height "100%"}]
    [:.min-h-screen {:min-height "100vh"}]])
 
-(def max-height
+(defn max-height
+  "https://tailwindcss.com/docs/max-height"
+  []
   [[:.max-h-0 {:max-height "0px"}]
    [:.max-h-0.5 {:max-height "0.125rem"}]
    [:.max-h-1 {:max-height "0.25rem"}]

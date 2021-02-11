@@ -6,21 +6,24 @@
     [com.wsscode.tailwind-garden.expanders :as exp]
     [garden.stylesheet]))
 
-(def container
+(defn container
   "https://tailwindcss.com/docs/container"
+  []
   (into [[:.container {:width "100%"}]]
         (map (fn [[_name size]]
                (garden.stylesheet/at-media {:min-width size}
                                            [:.container {:max-width size}])))
         responsive/breakpoints))
 
-(def box-sizing
+(defn box-sizing
   "https://tailwindcss.com/docs/box-sizing"
+  []
   [[:.box-border {:box-sizing "border-box"}]
    [:.box-content {:box-sizing "content-box"}]])
 
-(def display
+(defn display
   "https://tailwindcss.com/docs/display"
+  []
   [[:.block {:display "block"}]
    [:.inline-block {:display "inline-block"}]
    [:.inline {:display "inline"}]
@@ -41,29 +44,33 @@
    [:.contents {:display "contents"}]
    [:.hidden {:display "none"}]])
 
-(def floats
+(defn floats
   "https://tailwindcss.com/docs/float"
+  []
   [[:.float-right {:float "right"}]
    [:.float-left {:float "left"}]
    [:.float-none {:float "none"}]])
 
-(def clear
+(defn clear
   "https://tailwindcss.com/docs/clear"
+  []
   [[:.clear-left {:clear "left"}]
    [:.clear-right {:clear "right"}]
    [:.clear-both {:clear "both"}]
    [:.clear-none {:clear "none"}]])
 
-(def object-fit
+(defn object-fit
   "https://tailwindcss.com/docs/object-fit"
+  []
   [[:.object-contain {:object-fit "contain"}]
    [:.object-cover {:object-fit "cover"}]
    [:.object-fill {:object-fit "fill"}]
    [:.object-none {:object-fit "none"}]
    [:.object-scale-down {:object-fit "scale-down"}]])
 
-(def object-position
+(defn object-position
   "https://tailwindcss.com/docs/object-position"
+  []
   [[:.object-bottom {:object-position "bottom"}]
    [:.object-center {:object-position "center"}]
    [:.object-left {:object-position "left"}]
@@ -74,8 +81,9 @@
    [:.object-right-top {:object-position "right top"}]
    [:.object-top {:object-position "top"}]])
 
-(def overflow
+(defn overflow
   "https://tailwindcss.com/docs/overflow"
+  []
   [[:.overflow-auto {:overflow "auto"}]
    [:.overflow-hidden {:overflow "hidden"}]
    [:.overflow-visible {:overflow "visible"}]
@@ -89,8 +97,9 @@
    [:.overflow-x-scroll {:overflow-x "scroll"}]
    [:.overflow-y-scroll {:overflow-y "scroll"}]])
 
-(def overscroll-behavior
+(defn overscroll-behavior
   "https://tailwindcss.com/docs/overscroll-behavior"
+  []
   [[:.overscroll-auto {:overscroll-behavior "auto"}]
    [:.overscroll-contain {:overscroll-behavior "contain"}]
    [:.overscroll-none {:overscroll-behavior "none"}]
@@ -101,8 +110,9 @@
    [:.overscroll-x-contain {:overscroll-behavior-x "contain"}]
    [:.overscroll-x-none {:overscroll-behavior-x "none"}]])
 
-(def position
+(defn position
   "https://tailwindcss.com/docs/position"
+  []
   [[:.static {:position "static"}]
    [:.fixed {:position "fixed"}]
    [:.absolute {:position "absolute"}]
@@ -115,8 +125,9 @@
      ::exp/prefix     prefix
      ::exp/values     data.layout/positions}))
 
-(def top-right-left-bottom
+(defn top-right-left-bottom
   "https://tailwindcss.com/docs/top-right-bottom-left"
+  []
   (reduce into
     [(gen-positions+negatives [:top :right :bottom :left] "inset")
      (gen-positions+negatives [:top :bottom] "inset-y")
@@ -126,13 +137,15 @@
      (gen-positions+negatives [:bottom] "bottom")
      (gen-positions+negatives [:left] "left")]))
 
-(def visibility
+(defn visibility
   "https://tailwindcss.com/docs/visibility"
+  []
   [[:.visible {:visibility "visible"}]
    [:.invisible {:visibility "hidden"}]])
 
-(def z-index
+(defn z-index
   "https://tailwindcss.com/docs/z-index"
+  []
   [[:.z-0 {:z-index "0"}]
    [:.z-10 {:z-index "10"}]
    [:.z-20 {:z-index "20"}]

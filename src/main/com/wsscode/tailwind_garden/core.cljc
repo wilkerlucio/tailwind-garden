@@ -16,25 +16,25 @@
 
 (defn bases []
   (reduce into
-    [layout/box-sizing
-     layout/display
-     layout/floats
-     layout/clear
-     layout/object-fit
-     layout/object-position
-     layout/overflow
-     layout/overscroll-behavior
-     layout/position
-     layout/top-right-left-bottom
-     layout/visibility
-     layout/z-index
+    [(layout/box-sizing)
+     (layout/display)
+     (layout/floats)
+     (layout/clear)
+     (layout/object-fit)
+     (layout/object-position)
+     (layout/overflow)
+     (layout/overscroll-behavior)
+     (layout/position)
+     (layout/top-right-left-bottom)
+     (layout/visibility)
+     (layout/z-index)
 
-     flexbox/flex-direction
-     flexbox/flex-wrap
-     flexbox/flex
-     flexbox/flex-grow
-     flexbox/flex-shrink
-     flexbox/order
+     (flexbox/flex-direction)
+     (flexbox/flex-wrap)
+     (flexbox/flex)
+     (flexbox/flex-grow)
+     (flexbox/flex-shrink)
+     (flexbox/order)
 
      (grid/grid-template-columns)
      (grid/grid-column-start-end)
@@ -45,26 +45,26 @@
      (grid/grid-auto-rows)
      (grid/gap)
 
-     box-alignment/justify-content
-     box-alignment/justify-items
-     box-alignment/justify-self
-     box-alignment/align-content
-     box-alignment/align-items
-     box-alignment/align-self
-     box-alignment/place-content
-     box-alignment/place-items
-     box-alignment/place-self
+     (box-alignment/justify-content)
+     (box-alignment/justify-items)
+     (box-alignment/justify-self)
+     (box-alignment/align-content)
+     (box-alignment/align-items)
+     (box-alignment/align-self)
+     (box-alignment/place-content)
+     (box-alignment/place-items)
+     (box-alignment/place-self)
 
-     spacing/margin
-     spacing/padding
-     spacing/space-between
+     (spacing/margin)
+     (spacing/padding)
+     (spacing/space-between)
 
-     sizing/width
-     sizing/min-width
-     sizing/max-width
-     sizing/height
-     sizing/min-height
-     sizing/max-height
+     (sizing/width)
+     (sizing/min-width)
+     (sizing/max-width)
+     (sizing/height)
+     (sizing/min-height)
+     (sizing/max-height)
 
      typography/font-family
      typography/font-size
@@ -84,7 +84,7 @@
 
 (defn everything []
   (let [bases (bases)]
-    (-> (reduce into [base/preflight layout/container bases])
+    (-> (reduce into [base/preflight (layout/container) bases])
         (conj
           (responsive-selectors "640px" "sm" bases)
           (responsive-selectors "768px" "md" bases)

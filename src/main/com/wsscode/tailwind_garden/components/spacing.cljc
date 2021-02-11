@@ -14,7 +14,9 @@
      ::exp/prefix     prefix
      ::exp/values     data.spacing/space-steps}))
 
-(def padding
+(defn padding
+  "https://tailwindcss.com/docs/padding"
+  []
   (reduce into
     [(gen-spaces [:padding] "p")
      (gen-spaces [:padding-top :padding-bottom] "py")
@@ -24,7 +26,9 @@
      (gen-spaces [:padding-bottom] "pb")
      (gen-spaces [:padding-left] "pl")]))
 
-(def margin
+(defn margin
+  "https://tailwindcss.com/docs/margin"
+  []
   (reduce into
     [(gen-spaces+negatives [:margin] "m")
      (gen-spaces+negatives [:margin-top :margin-bottom] "my")
@@ -46,7 +50,9 @@
         (conj [(keyword (str ".space-" axis-name "-reverse"))
                {reverse-var "1"}]))))
 
-(def space-between
+(defn space-between
+  "https://tailwindcss.com/docs/space"
+  []
   (into
     (gen-space-between "y" :margin-top :margin-bottom)
     (gen-space-between "x" :margin-left :margin-right)))
