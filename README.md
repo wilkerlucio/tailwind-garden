@@ -11,7 +11,7 @@
     - [X] Floats
     - [X] Clear
     - [X] Object Fit
-    - [ ] Object Position
+    - [X] Object Position
     - [X] Overflow
     - [ ] Overscroll Behavior
     - [ ] Position

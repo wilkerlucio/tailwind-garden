@@ -60,6 +60,18 @@
    [:.object-none {:object-fit "none"}]
    [:.object-scale-down {:object-fit "scale-down"}]])
 
+(def object-position
+  "https://tailwindcss.com/docs/object-position"
+  [[:.object-bottom {:object-position "bottom"}]
+   [:.object-center {:object-position "center"}]
+   [:.object-left {:object-position "left"}]
+   [:.object-left-bottom {:object-position "left bottom"}]
+   [:.object-left-top {:object-position "left top"}]
+   [:.object-right {:object-position "right"}]
+   [:.object-right-bottom {:object-position "right bottom"}]
+   [:.object-right-top {:object-position "right top"}]
+   [:.object-top {:object-position "top"}]])
+
 (def overflow
   "https://tailwindcss.com/docs/overflow"
   [[:.overflow-auto {:overflow "auto"}]
