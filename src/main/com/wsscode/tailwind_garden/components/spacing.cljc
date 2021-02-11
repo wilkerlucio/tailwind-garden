@@ -34,4 +34,19 @@
      (gen-spaces+negatives [:margin-bottom] "mb")
      (gen-spaces+negatives [:margin-left] "ml")]))
 
-(def space-between)
+(defn gen-space-between [axis-name axis1 axis2]
+  (let [reverse-var (str "--tw-space-" axis-name "-reverse")]
+    (-> (mapv
+          (fn [[k v]]
+            [(keyword (str ".space-" axis-name "-" k))
+             {reverse-var "0"
+              axis1       (str "calc(" v " * calc(1 - var(" reverse-var ")))")
+              axis2       (str "calc(" v " * var(" reverse-var "))")}])
+          data.spacing/space-steps)
+        (conj [(keyword (str ".space-" axis-name "-reverse"))
+               {reverse-var "1"}]))))
+
+(def space-between
+  (into
+    (gen-space-between "y" :margin-top :margin-bottom)
+    (gen-space-between "x" :margin-left :margin-right)))

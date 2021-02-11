@@ -44,10 +44,10 @@
     - [X] Place Content
     - [X] Place Items
     - [X] Place Self
-- [ ] SPACING
+- [X] SPACING
     - [X] Padding
     - [X] Margin
-    - [ ] Space Between
+    - [X] Space Between
 - [X] SIZING
     - [X] Width
     - [X] Min-Width
