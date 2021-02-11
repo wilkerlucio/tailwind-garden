@@ -12,6 +12,7 @@
     [com.wsscode.tailwind-garden.components.layout :as layout]
     [com.wsscode.tailwind-garden.components.sizing :as sizing]
     [com.wsscode.tailwind-garden.components.spacing :as spacing]
+    [com.wsscode.tailwind-garden.components.svg :as svg]
     [com.wsscode.tailwind-garden.components.tables :as tables]
     [com.wsscode.tailwind-garden.components.typography :as typography]
     [garden.core :as garden]
@@ -120,6 +121,10 @@
 
      (tables/border-collapse)
      (tables/table-layout)
+
+     (svg/fill)
+     (svg/stroke)
+     (svg/stroke-width)
 
      (accessibility/screen-readers)]))
 

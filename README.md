@@ -132,5 +132,9 @@
     - [ ] Fill
     - [ ] Stroke
     - [ ] Stroke Width
-- [ ] ACCESSIBILITY
-    - [ ] Screen Readers
+- [X] SVG
+  - [X] Fill
+  - [X] Stroke
+  - [X] Stroke Width
+- [X] ACCESSIBILITY
+    - [X] Screen Readers
