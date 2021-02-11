@@ -105,10 +105,19 @@
    ["95" "0.95"]
    ["100" "1"]])
 
-(defn gen-colors [properties prefix]
-  (exp/expand-values {::exp/properties properties
-                      ::exp/prefix     prefix
-                      ::exp/values     colors}))
+(defn gen-colors
+  ([properties prefix]
+   (exp/expand-values {::exp/properties properties
+                       ::exp/prefix     prefix
+                       ::exp/values     colors}))
+  ([properties prefix base]
+   (mapv
+     (fn [[k v]]
+       [(str "." prefix "-" k)
+        (into base
+              (map (fn [p] [p (str "-" v)]))
+              properties)])
+     colors)))
 
 (defn gen-opacity [properties prefix]
   (exp/expand-values {::exp/properties properties

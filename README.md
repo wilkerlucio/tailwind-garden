@@ -77,16 +77,16 @@
     - [X] Vertical Align
     - [X] Whitespace
     - [X] Word Break
-- [ ] BACKGROUNDS
-    - [ ] Background Attachment
-    - [ ] Background Clip
+- [X] BACKGROUNDS
+    - [X] Background Attachment
+    - [X] Background Clip
     - [X] Background Color
-    - [ ] Background Opacity
-    - [ ] Background Position
-    - [ ] Background Repeat
-    - [ ] Background Size
-    - [ ] Background Image
-    - [ ] Gradient Color Stops
+    - [X] Background Opacity
+    - [X] Background Position
+    - [X] Background Repeat
+    - [X] Background Size
+    - [X] Background Image
+    - [X] Gradient Color Stops
 - [ ] BORDERS
     - [ ] Border Radius
     - [X] Border Width

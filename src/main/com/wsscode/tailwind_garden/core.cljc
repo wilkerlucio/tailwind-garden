@@ -88,7 +88,15 @@
      (typography/whitespace)
      (typography/word-break)
 
-     (backgrounds/background-colors)
+     (backgrounds/background-attachment)
+     (backgrounds/background-clip)
+     (backgrounds/background-color)
+     (backgrounds/background-opacity)
+     (backgrounds/background-position)
+     (backgrounds/background-repeat)
+     (backgrounds/background-size)
+     (backgrounds/background-image)
+     (backgrounds/gradient-color-stops)
 
      (borders/border-color)
      (borders/border-width)]))
@@ -114,4 +122,5 @@
   (garden/css (everything)))
 
 (comment
-  (count (compute-css)))
+  (time
+   (count (compute-css))))
