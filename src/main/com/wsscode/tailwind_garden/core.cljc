@@ -1,4 +1,5 @@
 (ns com.wsscode.tailwind-garden.core
+  (:refer-clojure :exclude [bases])
   (:require
     [com.wsscode.tailwind-garden.components.backgrounds :as backgrounds]
     [com.wsscode.tailwind-garden.components.base :as base]
@@ -29,7 +30,8 @@
      sizing/max-width
      sizing/width
 
-     spacing/all-spaces
+     spacing/margin
+     spacing/padding
 
      typography/font-family
      typography/font-size
@@ -40,7 +42,7 @@
 
 (defn responsive-selectors [min-width prefix rules]
   (garden.stylesheet/at-media {:min-width min-width}
-    (into [] (map #(update % 0 prefix-classname (str prefix ":"))) rules)))
+                              (into [] (map #(update % 0 prefix-classname (str prefix ":"))) rules)))
 
 (def everything
   (conj

@@ -117,13 +117,14 @@
 
 (def top-right-left-bottom
   "https://tailwindcss.com/docs/top-right-bottom-left"
-  [(gen-positions+negatives [:top :right :bottom :left] "inset")
-   (gen-positions+negatives [:top :bottom] "inset-y")
-   (gen-positions+negatives [:right :left] "inset-x")
-   (gen-positions+negatives [:top] "top")
-   (gen-positions+negatives [:right] "right")
-   (gen-positions+negatives [:bottom] "bottom")
-   (gen-positions+negatives [:left] "left")])
+  (reduce into
+    [(gen-positions+negatives [:top :right :bottom :left] "inset")
+     (gen-positions+negatives [:top :bottom] "inset-y")
+     (gen-positions+negatives [:right :left] "inset-x")
+     (gen-positions+negatives [:top] "top")
+     (gen-positions+negatives [:right] "right")
+     (gen-positions+negatives [:bottom] "bottom")
+     (gen-positions+negatives [:left] "left")]))
 
 (def visibility
   "https://tailwindcss.com/docs/visibility"
