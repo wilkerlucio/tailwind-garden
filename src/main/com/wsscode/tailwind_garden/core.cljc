@@ -98,8 +98,19 @@
      (backgrounds/background-image)
      (backgrounds/gradient-color-stops)
 
+     (borders/border-radius)
      (borders/border-color)
-     (borders/border-width)]))
+     (borders/border-width)
+     (borders/border-opacity)
+     (borders/border-style)
+     (borders/divide-width)
+     (borders/divide-color)
+     (borders/divide-opacity)
+     (borders/divide-style)
+     (borders/ring-width)
+     (borders/ring-color)
+     (borders/ring-offset-width)
+     (borders/ring-offset-color)]))
 
 (defn prefix-classname [x prefix]
   (str "." prefix (subs (name x) 1)))

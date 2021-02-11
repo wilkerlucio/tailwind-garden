@@ -88,6 +88,11 @@
    ["pink-800" "rgb(157, 23, 77)"]
    ["pink-900" "rgb(131, 24, 67)"]])
 
+(defn rgb->rgba [color alpha]
+  (if-let [[_ c] (re-find #"rgb\((.+)\)" color)]
+    (str "rgba(" c ", " alpha ")")
+    color))
+
 (def opacity-steps
   [["0" "0"]
    ["5" "0.05"]
@@ -110,12 +115,12 @@
    (exp/expand-values {::exp/properties properties
                        ::exp/prefix     prefix
                        ::exp/values     colors}))
-  ([properties prefix base]
+  ([properties prefix opacity-var]
    (mapv
      (fn [[k v]]
-       [(str "." prefix "-" k)
-        (into base
-              (map (fn [p] [p (str "-" v)]))
+       [(keyword (str "." prefix "-" k))
+        (into {opacity-var "1"}
+              (map (fn [p] [p (rgb->rgba v (str "var(" (name opacity-var) ")"))]))
               properties)])
      colors)))
 

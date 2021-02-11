@@ -20,7 +20,7 @@
 (defn background-color
   "https://tailwindcss.com/docs/background-color"
   []
-  (data.colors/gen-colors [:background-color] "bg" {:--tw-bg-opacity "1"}))
+  (data.colors/gen-colors [:background-color] "bg" :--tw-bg-opacity))
 
 (defn background-opacity
   "https://tailwindcss.com/docs/background-opacity"
@@ -72,10 +72,10 @@
 
 (defn color-to-alpha [color]
   (case color
-    ("transparent" "black")
+    "transparent"
     "rgba(0, 0, 0, 0)"
 
-    ("current" "white")
+    "currentColor"
     "rgba(255, 255, 255, 0)"
 
     (if-let [[_ c] (re-find #"rgb\((.+)\)" color)]

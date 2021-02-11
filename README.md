@@ -87,21 +87,21 @@
     - [X] Background Size
     - [X] Background Image
     - [X] Gradient Color Stops
-- [ ] BORDERS
-    - [ ] Border Radius
+- [X] BORDERS
+    - [X] Border Radius
     - [X] Border Width
     - [X] Border Color
-    - [ ] Border Opacity
-    - [ ] Border Style
-    - [ ] Divide Width
-    - [ ] Divide Color
-    - [ ] Divide Opacity
-    - [ ] Divide Style
-    - [ ] Ring Width
-    - [ ] Ring Color
-    - [ ] Ring Opacity
-    - [ ] Ring Offset Width
-    - [ ] Ring Offset Color
+    - [X] Border Opacity
+    - [X] Border Style
+    - [X] Divide Width
+    - [X] Divide Color
+    - [X] Divide Opacity
+    - [X] Divide Style
+    - [X] Ring Width
+    - [X] Ring Color
+    - [X] Ring Opacity
+    - [X] Ring Offset Width
+    - [X] Ring Offset Color
 - [ ] EFFECTS
     - [ ] Box Shadow
     - [ ] Opacity

@@ -42,7 +42,7 @@
   (let [reverse-var (str "--tw-space-" axis-name "-reverse")]
     (-> (mapv
           (fn [[k v]]
-            [(keyword (str ".space-" axis-name "-" k))
+            [(str ".space-" axis-name "-" k " > * + *")
              {reverse-var "0"
               axis1       (str "calc(" v " * calc(1 - var(" reverse-var ")))")
               axis2       (str "calc(" v " * var(" reverse-var "))")}])

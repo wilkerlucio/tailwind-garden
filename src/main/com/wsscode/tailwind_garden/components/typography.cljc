@@ -123,7 +123,7 @@
 (defn placeholder-color
   "https://tailwindcss.com/docs/placeholder-color"
   []
-  (data.colors/gen-colors [:color] "text" {:--tw-placeholder-opacity "1"}))
+  (data.colors/gen-colors [:color] "text" :--tw-placeholder-opacity))
 
 (defn placeholder-opacity
   "https://tailwindcss.com/docs/placeholder-color"
@@ -141,7 +141,10 @@
 (defn text-color
   "https://tailwindcss.com/docs/text-color"
   []
-  (data.colors/gen-colors [:color] "text" {:--tw-text-opacity "1"}))
+  (data.colors/gen-colors [:color] "text" :--tw-text-opacity))
+
+(comment
+  (text-color))
 
 (defn text-opacity
   "https://tailwindcss.com/docs/text-opacity"
