@@ -16,6 +16,7 @@
     [com.wsscode.tailwind-garden.components.svg :as svg]
     [com.wsscode.tailwind-garden.components.tables :as tables]
     [com.wsscode.tailwind-garden.components.transforms :as transforms]
+    [com.wsscode.tailwind-garden.components.transitions :as transitions]
     [com.wsscode.tailwind-garden.components.typography :as typography]
     [garden.core :as garden]
     [garden.stylesheet]))
@@ -124,6 +125,12 @@
      (tables/border-collapse)
      (tables/table-layout)
 
+     (transitions/transition-property)
+     (transitions/transition-duration)
+     (transitions/transition-timing-function)
+     (transitions/transition-delay)
+     (transitions/animation)
+
      (transforms/transform)
      (transforms/transform-origin)
      (transforms/scale)
@@ -153,7 +160,7 @@
 
 (defn everything []
   (let [bases (bases)]
-    (-> (reduce into [base/preflight (layout/container) bases])
+    (-> (reduce into [base/preflight (layout/container) bases (transitions/animation-frames)])
         (conj
           (responsive-selectors "640px" "sm" bases)
           (responsive-selectors "768px" "md" bases)
@@ -166,4 +173,4 @@
 
 (comment
   (time
-   (count (compute-css))))
+    (count (compute-css))))

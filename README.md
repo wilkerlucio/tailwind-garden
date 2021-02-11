@@ -108,12 +108,12 @@
 - [X] TABLES
     - [X] Border Collapse
     - [X] Table Layout
-- [ ] TRANSITIONS AND ANIMATION
-    - [ ] Transition Property
-    - [ ] Transition Duration
-    - [ ] Transition Timing Function
-    - [ ] Transition Delay
-    - [ ] Animation
+- [X] TRANSITIONS AND ANIMATION
+    - [X] Transition Property
+    - [X] Transition Duration
+    - [X] Transition Timing Function
+    - [X] Transition Delay
+    - [X] Animation
 - [X] TRANSFORMS
     - [X] Transform
     - [X] Transform Origin
