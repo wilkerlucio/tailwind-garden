@@ -11,6 +11,7 @@
     [com.wsscode.tailwind-garden.components.layout :as layout]
     [com.wsscode.tailwind-garden.components.sizing :as sizing]
     [com.wsscode.tailwind-garden.components.spacing :as spacing]
+    [com.wsscode.tailwind-garden.components.tables :as tables]
     [com.wsscode.tailwind-garden.components.typography :as typography]
     [garden.core :as garden]
     [garden.stylesheet]))
@@ -114,7 +115,10 @@
      (borders/ring-offset-color)
 
      (effects/box-shadow)
-     (effects/opacity)]))
+     (effects/opacity)
+
+     (tables/border-collapse)
+     (tables/table-layout)]))
 
 (defn prefix-classname [x prefix]
   (str "." prefix (subs (name x) 1)))

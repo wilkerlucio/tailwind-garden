@@ -105,9 +105,9 @@
 - [X] EFFECTS
     - [X] Box Shadow
     - [X] Opacity
-- [ ] TABLES
-    - [ ] Border Collapse
-    - [ ] Table Layout
+- [X] TABLES
+    - [X] Border Collapse
+    - [X] Table Layout
 - [ ] TRANSITIONS AND ANIMATION
     - [ ] Transition Property
     - [ ] Transition Duration
