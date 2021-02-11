@@ -13,7 +13,7 @@
     - [X] Object Fit
     - [X] Object Position
     - [X] Overflow
-    - [ ] Overscroll Behavior
+    - [X] Overscroll Behavior
     - [ ] Position
     - [ ] Top / Right / Bottom / Left
     - [ ] Visibility
