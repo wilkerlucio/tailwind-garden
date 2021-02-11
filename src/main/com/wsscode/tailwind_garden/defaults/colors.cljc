@@ -1,4 +1,6 @@
-(ns com.wsscode.tailwind-garden.defaults.colors)
+(ns com.wsscode.tailwind-garden.defaults.colors
+  (:require
+    [com.wsscode.tailwind-garden.expanders :as exp]))
 
 (def colors
   [["transparent" "transparent"]
@@ -86,11 +88,29 @@
    ["pink-800" "rgb(157, 23, 77)"]
    ["pink-900" "rgb(131, 24, 67)"]])
 
+(def opacity-steps
+  [["0" "0"]
+   ["5" "0.05"]
+   ["10" "0.1"]
+   ["20" "0.2"]
+   ["25" "0.25"]
+   ["30" "0.3"]
+   ["40" "0.4"]
+   ["50" "0.5"]
+   ["60" "0.6"]
+   ["70" "0.7"]
+   ["75" "0.75"]
+   ["80" "0.8"]
+   ["90" "0.9"]
+   ["95" "0.95"]
+   ["100" "1"]])
+
 (defn gen-colors [properties prefix]
-  (mapv
-    (fn [[k v]]
-      [(keyword (str "." prefix "-" k))
-       (into {}
-             (map (fn [p] [p v]))
-             properties)])
-    colors))
+  (exp/expand-values {::exp/properties properties
+                      ::exp/prefix     prefix
+                      ::exp/values     colors}))
+
+(defn gen-opacity [properties prefix]
+  (exp/expand-values {::exp/properties properties
+                      ::exp/prefix     prefix
+                      ::exp/values     opacity-steps}))

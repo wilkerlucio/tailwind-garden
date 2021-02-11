@@ -55,28 +55,28 @@
     - [X] Height
     - [X] Min-Height
     - [X] Max-Height
-- [ ] TYPOGRAPHY
+- [X] TYPOGRAPHY
     - [X] Font Family
     - [X] Font Size
-    - [ ] Font Smoothing
-    - [ ] Font Style
-    - [ ] Font Weight
-    - [ ] Font Variant Numeric
-    - [ ] Letter Spacing
-    - [ ] Line Height
-    - [ ] List Style Type
-    - [ ] List Style Position
-    - [ ] Placeholder Color
-    - [ ] Placeholder Opacity
-    - [ ] Text Align
+    - [X] Font Smoothing
+    - [X] Font Style
+    - [X] Font Weight
+    - [X] Font Variant Numeric
+    - [X] Letter Spacing
+    - [X] Line Height
+    - [X] List Style Type
+    - [X] List Style Position
+    - [X] Placeholder Color
+    - [X] Placeholder Opacity
+    - [X] Text Align
     - [X] Text Color
-    - [ ] Text Opacity
-    - [ ] Text Decoration
-    - [ ] Text Transform
-    - [ ] Text Overflow
-    - [ ] Vertical Align
-    - [ ] Whitespace
-    - [ ] Word Break
+    - [X] Text Opacity
+    - [X] Text Decoration
+    - [X] Text Transform
+    - [X] Text Overflow
+    - [X] Vertical Align
+    - [X] Whitespace
+    - [X] Word Break
 - [ ] BACKGROUNDS
     - [ ] Background Attachment
     - [ ] Background Clip
