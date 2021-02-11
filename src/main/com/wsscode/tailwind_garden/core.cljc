@@ -1,6 +1,7 @@
 (ns com.wsscode.tailwind-garden.core
   (:refer-clojure :exclude [bases])
   (:require
+    [com.wsscode.tailwind-garden.components.accessibility :as accessibility]
     [com.wsscode.tailwind-garden.components.backgrounds :as backgrounds]
     [com.wsscode.tailwind-garden.components.base :as base]
     [com.wsscode.tailwind-garden.components.borders :as borders]
@@ -118,7 +119,9 @@
      (effects/opacity)
 
      (tables/border-collapse)
-     (tables/table-layout)]))
+     (tables/table-layout)
+
+     (accessibility/screen-readers)]))
 
 (defn prefix-classname [x prefix]
   (str "." prefix (subs (name x) 1)))
