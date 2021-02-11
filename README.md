@@ -4,7 +4,7 @@
 
 - [X] BASE STYLES
     - [X] Preflight
-- [ ] LAYOUT
+- [X] LAYOUT
     - [X] Container
     - [X] Box Sizing
     - [X] Display
@@ -17,7 +17,7 @@
     - [X] Position
     - [X] Top / Right / Bottom / Left
     - [X] Visibility
-    - [ ] Z-Index
+    - [X] Z-Index
 - [X] FLEXBOX
     - [X] Flex Direction
     - [X] Flex Wrap
