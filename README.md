@@ -35,7 +35,7 @@
     - [ ] Grid Auto Rows
     - [ ] Gap
 - [ ] BOX ALIGNMENT
-    - [ ] Justify Content
+    - [X] Justify Content
     - [ ] Justify Items
     - [ ] Justify Self
     - [ ] Align Content
