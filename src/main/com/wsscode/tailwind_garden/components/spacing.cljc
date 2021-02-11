@@ -4,15 +4,15 @@
     [com.wsscode.tailwind-garden.expanders :as exp]))
 
 (defn gen-spaces [properties prefix]
-  (exp/expand-values {:properties properties
-                      :prefix     prefix
-                      :values     data.spacing/space-steps}))
+  (exp/expand-values {::exp/properties properties
+                      ::exp/prefix     prefix
+                      ::exp/values     data.spacing/space-steps}))
 
 (defn gen-spaces+negatives [properties prefix]
   (exp/expand-values+negatives
-    {:properties properties
-     :prefix     prefix
-     :values     data.spacing/space-steps}))
+    {::exp/properties properties
+     ::exp/prefix     prefix
+     ::exp/values     data.spacing/space-steps}))
 
 (def padding
   (reduce into

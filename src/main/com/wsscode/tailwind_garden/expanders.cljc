@@ -1,7 +1,7 @@
 (ns com.wsscode.tailwind-garden.expanders)
 
 (defn expand-values
-  [{:keys [properties prefix values]}]
+  [{::keys [properties prefix values]}]
   (mapv
     (fn [[k v]]
       [(keyword (str "." prefix "-" k))
@@ -11,7 +11,7 @@
     values))
 
 (defn expand-values+negatives
-  [{:keys [properties prefix values] :as options}]
+  [{::keys [properties prefix values] :as options}]
   (into
     (expand-values options)
     (mapv

@@ -110,9 +110,10 @@
    [:.sticky {:position "sticky"}]])
 
 (defn gen-positions+negatives [properties prefix]
-  (exp/expand-values+negatives {:properties properties
-                                :prefix     prefix
-                                :values     data.layout/positions}))
+  (exp/expand-values+negatives
+    {::exp/properties properties
+     ::exp/prefix     prefix
+     ::exp/values     data.layout/positions}))
 
 (def top-right-left-bottom
   "https://tailwindcss.com/docs/top-right-bottom-left"
