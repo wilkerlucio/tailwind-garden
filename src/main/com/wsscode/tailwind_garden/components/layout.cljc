@@ -37,6 +37,12 @@
    [:.contents {:display "contents"}]
    [:.hidden {:display "none"}]])
 
+(def floats
+  "https://tailwindcss.com/docs/float"
+  [[:.float-right {:float "right"}]
+   [:.float-left {:float "left"}]
+   [:.float-none {:float "none"}]])
+
 (def overflow
   "https://tailwindcss.com/docs/overflow"
   [[:.overflow-auto {:overflow "auto"}]

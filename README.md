@@ -8,7 +8,7 @@
     - [X] Container
     - [X] Box Sizing
     - [X] Display
-    - [ ] Floats
+    - [X] Floats
     - [ ] Clear
     - [ ] Object Fit
     - [ ] Object Position
