@@ -10,7 +10,7 @@
     - [X] Display
     - [X] Floats
     - [X] Clear
-    - [ ] Object Fit
+    - [X] Object Fit
     - [ ] Object Position
     - [X] Overflow
     - [ ] Overscroll Behavior

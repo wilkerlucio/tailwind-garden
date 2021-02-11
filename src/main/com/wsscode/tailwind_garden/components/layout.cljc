@@ -52,6 +52,14 @@
    [:.clear-both {:clear "both"}]
    [:.clear-none {:clear "none"}]])
 
+(def object-fit
+  "https://tailwindcss.com/docs/object-fit"
+  [[:.object-contain {:object-fit "contain"}]
+   [:.object-cover {:object-fit "cover"}]
+   [:.object-fill {:object-fit "fill"}]
+   [:.object-none {:object-fit "none"}]
+   [:.object-scale-down {:object-fit "scale-down"}]])
+
 (def overflow
   "https://tailwindcss.com/docs/overflow"
   [[:.overflow-auto {:overflow "auto"}]
