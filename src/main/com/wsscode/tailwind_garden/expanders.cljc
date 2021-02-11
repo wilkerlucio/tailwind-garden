@@ -4,7 +4,7 @@
   [{::keys [properties prefix values]}]
   (mapv
     (fn [[k v]]
-      [(keyword (str "." prefix (if k (str "-" k))))
+      [(str "." prefix (if k (str "-" k)))
        (into {}
              (map (fn [p] [p v]))
              properties)])
@@ -16,7 +16,7 @@
     (expand-values options)
     (mapv
       (fn [[k v]]
-        [(keyword (str ".-" prefix (if k (str "-" k))))
+        [(str ".-" prefix (if k (str "-" k)))
          (into {}
                (map (fn [p] [p (str "-" v)]))
                properties)])

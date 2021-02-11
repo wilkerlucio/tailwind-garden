@@ -21,6 +21,25 @@
     [garden.core :as garden]
     [garden.stylesheet]))
 
+(defn with-variants [variants rules]
+  (into rules
+        (mapcat
+          (fn [[selector & parts]]
+            (into []
+                  (map
+                    (fn [variant]
+                      (into [(str "." variant "\\:" (subs (name selector) 1) ":" variant)]
+                            parts)))
+                  variants)))
+        rules))
+
+(defn prefix-classname [x prefix]
+  (str "." prefix (subs (name x) 1)))
+
+(defn responsive-selectors [min-width prefix rules]
+  (garden.stylesheet/at-media {:min-width min-width}
+                              (into [] (map #(update % 0 prefix-classname (str prefix ":"))) rules)))
+
 (defn bases []
   (reduce into
     [(layout/box-sizing)
@@ -83,12 +102,17 @@
      (typography/line-height)
      (typography/list-style-type)
      (typography/list-style-position)
-     (typography/placeholder-color)
-     (typography/placeholder-opacity)
+     (with-variants ["focus"]
+       (typography/placeholder-color))
+     (with-variants ["focus"]
+       (typography/placeholder-opacity))
      (typography/text-align)
-     (typography/text-color)
-     (typography/text-opacity)
-     (typography/text-decoration)
+     (with-variants ["hover"]
+       (typography/text-color))
+     (with-variants ["hover"]
+       (typography/text-opacity))
+     (with-variants ["hover"]
+       (typography/text-decoration))
      (typography/text-transform)
      (typography/text-overflow)
      (typography/vertical-align)
@@ -97,18 +121,23 @@
 
      (backgrounds/background-attachment)
      (backgrounds/background-clip)
-     (backgrounds/background-color)
-     (backgrounds/background-opacity)
+     (with-variants ["hover" "focus"]
+       (backgrounds/background-color))
+     (with-variants ["hover" "focus"]
+       (backgrounds/background-opacity))
      (backgrounds/background-position)
      (backgrounds/background-repeat)
      (backgrounds/background-size)
      (backgrounds/background-image)
-     (backgrounds/gradient-color-stops)
+     (with-variants ["hover" "focus"]
+       (backgrounds/gradient-color-stops))
 
      (borders/border-radius)
-     (borders/border-color)
+     (with-variants ["hover" "focus"]
+       (borders/border-color))
      (borders/border-width)
-     (borders/border-opacity)
+     (with-variants ["hover" "focus"]
+       (borders/border-opacity))
      (borders/border-style)
      (borders/divide-width)
      (borders/divide-color)
@@ -119,8 +148,10 @@
      (borders/ring-offset-width)
      (borders/ring-offset-color)
 
-     (effects/box-shadow)
-     (effects/opacity)
+     (with-variants ["hover" "focus"]
+       (effects/box-shadow))
+     (with-variants ["hover" "focus"]
+       (effects/opacity))
 
      (tables/border-collapse)
      (tables/table-layout)
@@ -133,14 +164,19 @@
 
      (transforms/transform)
      (transforms/transform-origin)
-     (transforms/scale)
-     (transforms/rotate)
-     (transforms/translate)
-     (transforms/skew)
+     (with-variants ["hover"]
+       (transforms/scale))
+     (with-variants ["hover"]
+       (transforms/rotate))
+     (with-variants ["hover"]
+       (transforms/translate))
+     (with-variants ["hover"]
+       (transforms/skew))
 
      (interactivity/appearance)
      (interactivity/cursor)
-     (interactivity/outline)
+     (with-variants ["focus"]
+       (interactivity/outline))
      (interactivity/pointer-events)
      (interactivity/resize)
      (interactivity/user-select)
@@ -149,14 +185,8 @@
      (svg/stroke)
      (svg/stroke-width)
 
-     (accessibility/screen-readers)]))
-
-(defn prefix-classname [x prefix]
-  (str "." prefix (subs (name x) 1)))
-
-(defn responsive-selectors [min-width prefix rules]
-  (garden.stylesheet/at-media {:min-width min-width}
-                              (into [] (map #(update % 0 prefix-classname (str prefix ":"))) rules)))
+     (with-variants ["focus"]
+       (accessibility/screen-readers))]))
 
 (defn everything []
   (let [bases (bases)]
