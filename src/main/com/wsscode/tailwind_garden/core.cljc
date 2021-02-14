@@ -18,27 +18,9 @@
     [com.wsscode.tailwind-garden.components.transforms :as transforms]
     [com.wsscode.tailwind-garden.components.transitions :as transitions]
     [com.wsscode.tailwind-garden.components.typography :as typography]
+    [com.wsscode.tailwind-garden.expanders :as exp]
     [garden.core :as garden]
     [garden.stylesheet]))
-
-(defn with-variants [variants rules]
-  (into rules
-        (mapcat
-          (fn [[selector & parts]]
-            (into []
-                  (map
-                    (fn [variant]
-                      (into [(str "." variant "\\:" (subs (name selector) 1) ":" variant)]
-                            parts)))
-                  variants)))
-        rules))
-
-(defn prefix-classname [x prefix]
-  (str "." prefix (subs (name x) 1)))
-
-(defn responsive-selectors [min-width prefix rules]
-  (garden.stylesheet/at-media {:min-width min-width}
-                              (into [] (map #(update % 0 prefix-classname (str prefix ":"))) rules)))
 
 (defn bases []
   (reduce into
@@ -102,17 +84,17 @@
      (typography/line-height)
      (typography/list-style-type)
      (typography/list-style-position)
-     (with-variants ["focus"]
-       (typography/placeholder-color))
-     (with-variants ["focus"]
-       (typography/placeholder-opacity))
+     (exp/with-variants ["focus"]
+                        (typography/placeholder-color))
+     (exp/with-variants ["focus"]
+                        (typography/placeholder-opacity))
      (typography/text-align)
-     (with-variants ["hover"]
-       (typography/text-color))
-     (with-variants ["hover"]
-       (typography/text-opacity))
-     (with-variants ["hover"]
-       (typography/text-decoration))
+     (exp/with-variants ["hover"]
+                        (typography/text-color))
+     (exp/with-variants ["hover"]
+                        (typography/text-opacity))
+     (exp/with-variants ["hover"]
+                        (typography/text-decoration))
      (typography/text-transform)
      (typography/text-overflow)
      (typography/vertical-align)
@@ -121,23 +103,23 @@
 
      (backgrounds/background-attachment)
      (backgrounds/background-clip)
-     (with-variants ["hover" "focus"]
-       (backgrounds/background-color))
-     (with-variants ["hover" "focus"]
-       (backgrounds/background-opacity))
+     (exp/with-variants ["hover" "focus"]
+                        (backgrounds/background-color))
+     (exp/with-variants ["hover" "focus"]
+                        (backgrounds/background-opacity))
      (backgrounds/background-position)
      (backgrounds/background-repeat)
      (backgrounds/background-size)
      (backgrounds/background-image)
-     (with-variants ["hover" "focus"]
-       (backgrounds/gradient-color-stops))
+     (exp/with-variants ["hover" "focus"]
+                        (backgrounds/gradient-color-stops))
 
      (borders/border-radius)
-     (with-variants ["hover" "focus"]
-       (borders/border-color))
+     (exp/with-variants ["hover" "focus"]
+                        (borders/border-color))
      (borders/border-width)
-     (with-variants ["hover" "focus"]
-       (borders/border-opacity))
+     (exp/with-variants ["hover" "focus"]
+                        (borders/border-opacity))
      (borders/border-style)
      (borders/divide-width)
      (borders/divide-color)
@@ -148,10 +130,10 @@
      (borders/ring-offset-width)
      (borders/ring-offset-color)
 
-     (with-variants ["hover" "focus"]
-       (effects/box-shadow))
-     (with-variants ["hover" "focus"]
-       (effects/opacity))
+     (exp/with-variants ["hover" "focus"]
+                        (effects/box-shadow))
+     (exp/with-variants ["hover" "focus"]
+                        (effects/opacity))
 
      (tables/border-collapse)
      (tables/table-layout)
@@ -164,19 +146,19 @@
 
      (transforms/transform)
      (transforms/transform-origin)
-     (with-variants ["hover"]
-       (transforms/scale))
-     (with-variants ["hover"]
-       (transforms/rotate))
-     (with-variants ["hover"]
-       (transforms/translate))
-     (with-variants ["hover"]
-       (transforms/skew))
+     (exp/with-variants ["hover"]
+                        (transforms/scale))
+     (exp/with-variants ["hover"]
+                        (transforms/rotate))
+     (exp/with-variants ["hover"]
+                        (transforms/translate))
+     (exp/with-variants ["hover"]
+                        (transforms/skew))
 
      (interactivity/appearance)
      (interactivity/cursor)
-     (with-variants ["focus"]
-       (interactivity/outline))
+     (exp/with-variants ["focus"]
+                        (interactivity/outline))
      (interactivity/pointer-events)
      (interactivity/resize)
      (interactivity/user-select)
@@ -185,18 +167,18 @@
      (svg/stroke)
      (svg/stroke-width)
 
-     (with-variants ["focus"]
-       (accessibility/screen-readers))]))
+     (exp/with-variants ["focus"]
+                        (accessibility/screen-readers))]))
 
 (defn everything []
   (let [bases (bases)]
     (-> (reduce into [base/preflight (layout/container) bases (transitions/animation-frames)])
         (conj
-          (responsive-selectors "640px" "sm" bases)
-          (responsive-selectors "768px" "md" bases)
-          (responsive-selectors "1024px" "lg" bases)
-          (responsive-selectors "1280px" "xl" bases)
-          (responsive-selectors "1536px" "2xl" bases)))))
+          (exp/responsive-selectors "640px" "sm" bases)
+          (exp/responsive-selectors "768px" "md" bases)
+          (exp/responsive-selectors "1024px" "lg" bases)
+          (exp/responsive-selectors "1280px" "xl" bases)
+          (exp/responsive-selectors "1536px" "2xl" bases)))))
 
 (defn compute-css []
   (garden/css (everything)))
