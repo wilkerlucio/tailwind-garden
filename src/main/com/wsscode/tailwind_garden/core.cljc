@@ -85,16 +85,16 @@
      (typography/list-style-type)
      (typography/list-style-position)
      (exp/with-variants ["focus"]
-                        (typography/placeholder-color))
+       (typography/placeholder-color))
      (exp/with-variants ["focus"]
-                        (typography/placeholder-opacity))
+       (typography/placeholder-opacity))
      (typography/text-align)
      (exp/with-variants ["hover"]
-                        (typography/text-color))
+       (typography/text-color))
      (exp/with-variants ["hover"]
-                        (typography/text-opacity))
+       (typography/text-opacity))
      (exp/with-variants ["hover"]
-                        (typography/text-decoration))
+       (typography/text-decoration))
      (typography/text-transform)
      (typography/text-overflow)
      (typography/vertical-align)
@@ -104,22 +104,22 @@
      (backgrounds/background-attachment)
      (backgrounds/background-clip)
      (exp/with-variants ["hover" "focus"]
-                        (backgrounds/background-color))
+       (backgrounds/background-color))
      (exp/with-variants ["hover" "focus"]
-                        (backgrounds/background-opacity))
+       (backgrounds/background-opacity))
      (backgrounds/background-position)
      (backgrounds/background-repeat)
      (backgrounds/background-size)
      (backgrounds/background-image)
      (exp/with-variants ["hover" "focus"]
-                        (backgrounds/gradient-color-stops))
+       (backgrounds/gradient-color-stops))
 
      (borders/border-radius)
      (exp/with-variants ["hover" "focus"]
-                        (borders/border-color))
+       (borders/border-color))
      (borders/border-width)
      (exp/with-variants ["hover" "focus"]
-                        (borders/border-opacity))
+       (borders/border-opacity))
      (borders/border-style)
      (borders/divide-width)
      (borders/divide-color)
@@ -131,9 +131,9 @@
      (borders/ring-offset-color)
 
      (exp/with-variants ["hover" "focus"]
-                        (effects/box-shadow))
+       (effects/box-shadow))
      (exp/with-variants ["hover" "focus"]
-                        (effects/opacity))
+       (effects/opacity))
 
      (tables/border-collapse)
      (tables/table-layout)
@@ -147,18 +147,18 @@
      (transforms/transform)
      (transforms/transform-origin)
      (exp/with-variants ["hover"]
-                        (transforms/scale))
+       (transforms/scale))
      (exp/with-variants ["hover"]
-                        (transforms/rotate))
+       (transforms/rotate))
      (exp/with-variants ["hover"]
-                        (transforms/translate))
+       (transforms/translate))
      (exp/with-variants ["hover"]
-                        (transforms/skew))
+       (transforms/skew))
 
      (interactivity/appearance)
      (interactivity/cursor)
      (exp/with-variants ["focus"]
-                        (interactivity/outline))
+       (interactivity/outline))
      (interactivity/pointer-events)
      (interactivity/resize)
      (interactivity/user-select)
@@ -168,7 +168,7 @@
      (svg/stroke-width)
 
      (exp/with-variants ["focus"]
-                        (accessibility/screen-readers))]))
+       (accessibility/screen-readers))]))
 
 (defn everything []
   (let [bases (bases)]
