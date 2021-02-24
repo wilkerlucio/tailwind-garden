@@ -8,6 +8,7 @@
     [com.wsscode.tailwind-garden.components.box-alignment :as box-alignment]
     [com.wsscode.tailwind-garden.components.effects :as effects]
     [com.wsscode.tailwind-garden.components.flexbox :as flexbox]
+    [com.wsscode.tailwind-garden.components.forms :as forms]
     [com.wsscode.tailwind-garden.components.grid :as grid]
     [com.wsscode.tailwind-garden.components.interactivity :as interactivity]
     [com.wsscode.tailwind-garden.components.layout :as layout]
@@ -172,7 +173,7 @@
 
 (defn everything []
   (let [bases (bases)]
-    (-> (reduce into [base/preflight (layout/container) bases (transitions/animation-frames)])
+    (-> (reduce into [base/preflight (layout/container) (forms/forms) bases (transitions/animation-frames)])
         (conj
           (exp/responsive-selectors "640px" "sm" bases)
           (exp/responsive-selectors "768px" "md" bases)
