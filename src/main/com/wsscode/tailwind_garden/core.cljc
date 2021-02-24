@@ -126,10 +126,16 @@
      (borders/divide-color)
      (borders/divide-opacity)
      (borders/divide-style)
-     (borders/ring-width)
-     (borders/ring-color)
-     (borders/ring-offset-width)
-     (borders/ring-offset-color)
+     (exp/with-variants ["hover" "focus"]
+       (borders/ring-width))
+     (exp/with-variants ["hover" "focus"]
+       (borders/ring-color))
+     (exp/with-variants ["hover" "focus"]
+       (borders/ring-opacity))
+     (exp/with-variants ["hover" "focus"]
+       (borders/ring-offset-width))
+     (exp/with-variants ["hover" "focus"]
+       (borders/ring-offset-color))
 
      (exp/with-variants ["hover" "focus"]
        (effects/box-shadow))
@@ -174,7 +180,13 @@
 
 (defn everything []
   (let [bases (bases)]
-    (-> (reduce into [base/preflight (layout/container) (forms/forms) bases (transitions/animation-frames)])
+    (-> (reduce into
+          [base/preflight
+           (layout/container)
+           (borders/ring-vars)
+           (forms/forms)
+           bases
+           (transitions/animation-frames)])
         (conj
           (exp/responsive-selectors "640px" "sm" bases)
           (exp/responsive-selectors "768px" "md" bases)

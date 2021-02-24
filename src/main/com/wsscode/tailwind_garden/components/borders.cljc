@@ -138,10 +138,18 @@
    [".divide-double > * + *" {:border-style "double"}]
    [".divide-none > * + *" {:border-style "none"}]])
 
+(defn ring-vars []
+  [[:* {:--tw-ring-inset         "var(--tw-empty,/*!*/ /*!*/)"
+        :--tw-ring-offset-width  "0px"
+        :--tw-ring-offset-color  "#fff"
+        :--tw-ring-color         "rgba(59,130,246,0.5)"
+        :--tw-ring-offset-shadow "0 0 transparent"
+        :--tw-ring-shadow        "0 0 transparent"}]])
+
 (defn ring-width
   "https://tailwindcss.com/docs/ring-width"
   []
-  [[:.* {:box-shadow "0 0 #0000"}]
+  [[:* {:box-shadow "0 0 #0000"}]
    [:.ring-0 {:box-shadow "var(--tw-ring-inset) 0 0 0 calc(0px + var(--tw-ring-offset-width)) var(--tw-ring-color)"}]
    [:.ring-1 {:box-shadow "var(--tw-ring-inset) 0 0 0 calc(1px + var(--tw-ring-offset-width)) var(--tw-ring-color)"}]
    [:.ring-2 {:box-shadow "var(--tw-ring-inset) 0 0 0 calc(2px + var(--tw-ring-offset-width)) var(--tw-ring-color)"}]
