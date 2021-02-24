@@ -133,7 +133,7 @@
 
      (exp/with-variants ["hover" "focus"]
        (effects/box-shadow))
-     (exp/with-variants ["hover" "focus"]
+     (exp/with-variants ["hover" "focus" "disabled"]
        (effects/opacity))
 
      (tables/border-collapse)
@@ -157,7 +157,8 @@
        (transforms/skew))
 
      (interactivity/appearance)
-     (interactivity/cursor)
+     (exp/with-variants ["hover" "disabled"]
+       (interactivity/cursor))
      (exp/with-variants ["focus"]
        (interactivity/outline))
      (interactivity/pointer-events)
