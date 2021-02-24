@@ -5,7 +5,7 @@
 (defn box-shadow
   "https://tailwindcss.com/docs/box-shadow"
   []
-  [[:.* {:--tw-shadow "0 0 #0000"}]
+  [[:* {:--tw-shadow "0 0 #0000"}]
    [:.shadow-sm {:--tw-shadow "0 1px 2px 0 rgba(0, 0, 0, 0.05)"
                  :box-shadow  "var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow)"}]
    [:.shadow {:--tw-shadow "0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06)"
