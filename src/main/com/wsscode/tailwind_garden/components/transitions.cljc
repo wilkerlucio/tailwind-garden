@@ -68,8 +68,8 @@
 
 (defn animation-frames []
   [(gs/at-keyframes :spin
-                    [:from {:transform "rotate(0deg"}]
-                    [:to {:transform "rotate(360deg"}])
+                    [:from {:transform "rotate(0deg)"}]
+                    [:to {:transform "rotate(360deg)"}])
    (gs/at-keyframes :ping
                     ["75%" "100%" {:transform "scale(2)" :opacity "0"}])
    (gs/at-keyframes :pulse
@@ -77,6 +77,6 @@
                     ["50%" {:opacity ".5"}])
    (gs/at-keyframes :bounce
                     ["0%" "100%" {:transform               "translateY(-25%)"
-                                  :animationTimingFunction "cubic-bezier(0.8, 0, 1, 1)"}]
+                                  :animation-timing-function "cubic-bezier(0.8, 0, 1, 1)"}]
                     ["50%" {:transform               "translateY(0)"
-                            :animationTimingFunction "cubic-bezier(0, 0, 0.2, 1)"}])])
+                            :animation-timing-function "cubic-bezier(0, 0, 0.2, 1)"}])])

@@ -16,3 +16,5 @@ pom.xml.asc
 .cpcache/
 .nrepl-port
 node_modules/
+.clj-kondo/
+.lsp/
