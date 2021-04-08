@@ -1,0 +1,29 @@
+{:paths
+ ["src/tasks"]
+
+ :tasks
+ {:init
+  (do
+    (require 'tasks)
+    (def source-paths ["src" "test"]))
+
+  format-check
+  (apply tasks/cljstyle "check" source-paths)
+
+  format-fix
+  (apply tasks/cljstyle "fix" source-paths)
+
+  lint
+  (tasks/clj-kondo-lint source-paths)
+
+  setup-hooks
+  tasks/setup-git-hooks
+
+  release
+  (do
+    (shell "lein deploy clojars")
+    (shell "lein vcs tag v")
+    (shell "git push --follow-tags"))
+
+  test
+  (shell "clojure -A:test")}}

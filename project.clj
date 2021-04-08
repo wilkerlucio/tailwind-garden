@@ -1,4 +1,4 @@
-(defproject com.wsscode/project-name "DATE_VERSION"
+(defproject com.wsscode/tailwind-garden "2021.04.08"
   :description ""
   :url "https://github.com/wilkerlucio/"
   :min-lein-version "2.7.0"
