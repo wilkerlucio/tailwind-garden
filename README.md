@@ -1,5 +1,45 @@
 # Tailwind Garden [![Clojars Project](https://img.shields.io/clojars/v/com.wsscode/tailwind-garden.svg)](https://clojars.org/com.wsscode/tailwind-garden) [![cljdoc badge](https://cljdoc.org/badge/com.wsscode/tailwind-garden)](https://cljdoc.org/d/com.wsscode/tailwind-garden/CURRENT)
 
+This library contains a copy of the CSS described by [TailwindCSS](https://tailwindcss.com/) documentation pages.
+
+The CSS was manually ported (copied and pasted + editor macros to convert syntax) and
+in case Tailwind changes, manual changes will be required to be done here as well.
+
+That said, this doesn't have any dependency on any JS library, everything is self-contained
+here.
+
+## Using Tailwind Garden
+
+To use all the Tailwind CSS:
+
+```clojure
+(ns my-app
+  (:require [com.wsscode.tailwind-garden.core :as tw]))
+
+(def tailwind-css (tw/compute-css)) ; generate full css as string
+```
+
+Tailwind Garden is compatible with both Clojure and Clojurescript, in case you are
+making a web service and want to ship the CSS from it, you can just drop that string
+in some handler.
+
+To use from Clojurescript, you can create a style tag and inject it:
+
+```clojure
+(defn create-style-element [css]
+  (doto (js/document.createElement "style")
+    (gdom/appendChild (js/document.createTextNode css))))
+
+(defn inject-css [css]
+  (let [style (create-style-element css)]
+    (gdom/appendChild js/document.head style)
+    #(gdom/removeNode style)))
+
+(defn main []
+  ; on app mount, or whenever makes sense to inject the CSS
+  (inject-css tailwind-css))
+```
+
 ## Porting status
 
 - [X] BASE STYLES
