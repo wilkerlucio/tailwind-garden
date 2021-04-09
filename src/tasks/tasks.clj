@@ -32,6 +32,7 @@
       :out))
 
 (def clojure (partial sh :clojure))
+(def git (partial sh :git))
 
 ; endregion
 
@@ -59,6 +60,11 @@
 ; endregion
 
 ; region git
+
+(defn tag-project-version []
+  (let [[_ _ version] (read-string (slurp "project.clj"))
+        version' (str "v" version)]
+    (git "tag" "-a" version' "-m" version')))
 
 (defn modified-files
   "Return a list of the files that are part of the current commit.

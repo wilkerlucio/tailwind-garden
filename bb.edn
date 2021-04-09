@@ -22,7 +22,7 @@
   release
   (do
     (shell "lein deploy clojars")
-    (shell "lein vcs tag v")
+    (tasks/tag-project-version)
     (shell "git push --follow-tags"))
 
   test
