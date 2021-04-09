@@ -40,6 +40,16 @@ To use from Clojurescript, you can create a style tag and inject it:
   (inject-css tailwind-css))
 ```
 
+## Customizing CSS
+
+Currently, you can only choose to use or not specific components. In the future this
+library may provide detailed configuration of the variables.
+
+A good way to start a custom build is to copy from the `everything` [defined by
+Tailwind Garden](https://github.com/wilkerlucio/tailwind-garden/blob/2674a46cad032b93879958f90dd15e0243b134ad/src/main/com/wsscode/tailwind_garden/core.cljc#L26-L195).
+
+Note you can also adjust the generated [variants](https://tailwindcss.com/docs/configuring-variants) there. 
+
 ## Porting status
 
 - [X] BASE STYLES
