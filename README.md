@@ -26,6 +26,13 @@ in some handler.
 To use from Clojurescript, you can create a style tag and inject it:
 
 ```clojure
+(ns my-app
+  (:require 
+    [com.wsscode.tailwind-garden.core :as tw]
+    [goog.dom :as gdom]))
+
+(def tailwind-css (tw/compute-css))
+
 (defn create-style-element [css]
   (doto (js/document.createElement "style")
     (gdom/appendChild (js/document.createTextNode css))))
