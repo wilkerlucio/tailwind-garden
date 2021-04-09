@@ -1,6 +1,7 @@
 # Tailwind Garden [![Clojars Project](https://img.shields.io/clojars/v/com.wsscode/tailwind-garden.svg)](https://clojars.org/com.wsscode/tailwind-garden) [![cljdoc badge](https://cljdoc.org/badge/com.wsscode/tailwind-garden)](https://cljdoc.org/d/com.wsscode/tailwind-garden/CURRENT)
 
-This library contains a copy of the CSS described by [TailwindCSS](https://tailwindcss.com/) documentation pages.
+This library contains a copy of the CSS described by [TailwindCSS](https://tailwindcss.com/) documentation pages,
+ported to the [Garden](https://github.com/noprompt/garden) syntax.
 
 The CSS was manually ported (copied and pasted + editor macros to convert syntax) and
 in case Tailwind changes, manual changes will be required to be done here as well.
