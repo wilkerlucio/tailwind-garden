@@ -1,4 +1,4 @@
-# Library template
+# Tailwind Garden [![Clojars Project](https://img.shields.io/clojars/v/com.wsscode/tailwind-garden.svg)](https://clojars.org/com.wsscode/tailwind-garden) [![cljdoc badge](https://cljdoc.org/badge/com.wsscode/tailwind-garden)](https://cljdoc.org/d/com.wsscode/tailwind-garden/CURRENT)
 
 ## Porting status
 
